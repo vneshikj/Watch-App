@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Java_App</string>
+    <string name="automatic_watches">Automatic Watches</string>
+    <string name="mechanical_watches">Mechanical Watches</string>
+</resources>

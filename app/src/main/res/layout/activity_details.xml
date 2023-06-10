@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsActivity"
+    android:background="@color/black">
+
+  <!--Top Bar-->
+  <TextView
+      android:id="@+id/textView"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:background="#40434E"
+      android:gravity="center"
+      android:text="WatchList"
+      android:textColor="@color/white"
+      android:textSize="24dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.0"
+      android:layout_marginBottom="0dp"/>
+
+  <!--Image viewer-->
+
+  <!--Watch title-->
+
+  <ImageButton
+      android:id="@+id/backButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@android:color/transparent"
+      android:drawableTint="@color/white"
+      android:src="@drawable/arrow_back"
+      app:layout_constraintBottom_toBottomOf="@+id/textView"
+      app:layout_constraintEnd_toEndOf="@+id/textView"
+      app:layout_constraintHorizontal_bias="0.03"
+      app:layout_constraintStart_toStartOf="@+id/textView"
+      app:layout_constraintTop_toTopOf="@+id/textView"
+      app:layout_constraintVertical_bias="0.5"
+      />
+
+  <androidx.viewpager.widget.ViewPager
+      android:id="@+id/viewPager"
+      android:layout_width="match_parent"
+      android:layout_height="300dp"
+      app:layout_constraintHeight_max="wrap"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toTopOf="@id/scrollView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/viewPager"
+      app:layout_constraintVertical_bias="0.0">
+
+    <!--Scrollable Frame-->
+
+    <!--Watch title-->
+
+    <TextView
+        android:id="@+id/details_watch_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watch"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.076" />
+
+    <TextView
+        android:id="@+id/details_price_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Price"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_watch_title"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/favoriteButton"
+        style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Favourite"
+        android:textColor="@color/orange_accent"
+        app:icon="@drawable/favourites_icon"
+        app:iconTint="@color/orange_accent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/orange_accent"
+        app:strokeWidth="1.5dp" />
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <ScrollView
+      android:id="@+id/scrollView"
+      android:layout_width="match_parent"
+      android:layout_height="230dp"
+      android:background="#000000"
+      app:layout_constraintBottom_toTopOf="@+id/bottomNavigationBar"
+      app:layout_constraintEnd_toEndOf="@id/bottomNavigationBar"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+
+      app:layout_constraintTop_toBottomOf="@+id/viewPager"
+      app:layout_constraintVertical_bias="0.997">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+      <!--Description title-->
+      <TextView
+          android:id="@+id/description_title"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="3dp"
+          android:layout_marginBottom="10dp"
+          android:text="Description"
+          android:textColor="@color/white"
+          android:textSize="24dp" />
+
+      <!--Description content-->
+      <TextView
+          android:id="@+id/description_content"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="10dp"
+          android:background="@drawable/grey_background"
+          android:padding="10dp"
+          android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lacinia condimentum est finibus vestibulum.  Nulla facilisi. Cras auctor nulla vitae leo semper, vel finibus mi mollis. Morbi congue pellentesque quam non molestie. In ligula metus, consequat nec quam id, malesuada commodo ipsum. "
+          android:textColor="@color/white"
+          android:textSize="16dp" />
+
+      <!--Categories title-->
+      <TextView
+          android:id="@+id/categories_title"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="3dp"
+          android:layout_marginBottom="10dp"
+          android:text="Categories"
+          android:textColor="@color/white"
+          android:textSize="24dp" />
+
+      <!--Chips-->
+      <com.google.android.material.chip.ChipGroup
+          android:id="@+id/chipGroup"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="10dp"
+          android:background="@drawable/grey_background"
+          app:chipSpacingHorizontal="5dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/brand_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Brand"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="@color/black"
+            app:chipIcon="@drawable/style_icon"
+            app:chipIconTint="@color/orange_accent" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/type_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="@color/black"
+            app:chipIcon="@drawable/watch_icon"
+            app:chipIconTint="@color/orange_accent" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/movement_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movement"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="@color/black"
+            app:chipIcon="@drawable/watch_icon"
+            app:chipIconTint="@color/orange_accent" />
+
+      </com.google.android.material.chip.ChipGroup>
+
+      <!--You may also like title-->
+      <TextView
+          android:id="@+id/Likes_title"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="You May Also Like:"
+          android:textColor="@color/white"
+          android:textSize="24dp" />
+
+
+      <!-- Todo: Top picks (Kind of done but needs to be dynamic) -->
+      <!--Card viewer-->
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/topPicksRecyclerView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:scrollbars="horizontal"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.498"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.111" />
+
+      <View
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@color/white" />
+
+    </LinearLayout>
+
+  </ScrollView>
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:id="@+id/bottomNavigationBar"
+      android:layout_width="match_parent"
+      android:layout_height="77dp"
+      app:itemBackground="@color/grey"
+      app:itemIconTint="@drawable/navigation_bar_selector"
+      app:itemTextColor="@drawable/navigation_bar_selector"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="1.0"
+      app:menu="@menu/menu_navigation_bar"
+      tools:layout_editor_absoluteX="0dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

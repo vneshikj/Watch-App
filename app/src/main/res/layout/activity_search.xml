@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity"
+    android:background="@color/black"
+    >
+
+    <!--Watch Title-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#40434E"
+        android:gravity="center"
+        android:text="WatchList"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <SearchView
+        android:id="@+id/watch_search_bar"
+        android:layout_width="390dp"
+        android:layout_height="60dp"
+        android:background="@drawable/search_bar_background"
+        android:clickable="true"
+        android:queryHint="Search"
+        android:searchIcon="@drawable/search_bar_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113"
+        android:textColor = "@android:color/white" />
+
+
+    <TextView
+        android:id="@+id/filter_by_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter By:"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/watch_search_bar"
+        app:layout_constraintVertical_bias="0.017" />
+
+    <Spinner
+        android:id="@+id/spinner_brand"
+        style="@style/SpinnerStyle"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:background="@drawable/spinner_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.272" />
+
+    <Spinner
+        android:id="@+id/spinner_type"
+        style="@style/SpinnerStyle"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:background="@drawable/spinner_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinner_brand"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.272" />
+
+
+    <Spinner
+        android:id="@+id/spinner_movement"
+        style="@style/SpinnerStyle"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:background="@drawable/spinner_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationBar"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_brand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.272" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSearch"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_brand" />
+
+
+    <TextView
+        android:id="@+id/no_watches_found"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NO WATCHES FOUND"
+        android:textSize="28dp"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        app:itemBackground="@color/grey"
+        app:itemIconTint="@drawable/navigation_bar_selector"
+        app:itemTextColor="@drawable/navigation_bar_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_navigation_bar"
+        tools:layout_editor_absoluteX="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

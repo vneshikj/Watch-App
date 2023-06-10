@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_bar"
+    app:startDestination="@layout/activity_main"
+    >
+
+    <activity
+        android:id="@+id/mainActivityNav"
+        android:name="com.example.java_app.MainActivity"
+        android:label="Home"
+        />
+
+    <activity
+        android:id="@+id/listActivityNav"
+        android:name="com.example.java_app.SearchActivity"
+        android:label="Search"
+        />
+
+
+
+    <!--todo add favourite activity-->
+
+</navigation>

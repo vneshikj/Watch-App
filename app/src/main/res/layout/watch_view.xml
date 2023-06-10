@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/watch_item_background"
+    android:padding="0dp"
+    android:layout_margin="10dp"
+    >
+
+    <ImageView
+        android:background="@drawable/watch_image_background"
+        android:id="@+id/watch_image"
+        android:layout_width="90dp"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/watch_name"
+        android:layout_width="100dp"
+        android:layout_height="16dp"
+
+        android:textColor="@color/white"
+
+        app:layout_constraintBottom_toTopOf="@+id/watch_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toEndOf="@+id/watch_image"
+        app:layout_constraintTop_toTopOf="@+id/watch_image"
+        app:layout_constraintVertical_bias="0.75"
+        tools:text="Name" />
+
+    <TextView
+        android:id="@+id/watch_price"
+        android:layout_width="100dp"
+        android:layout_height="16dp"
+        android:text="Price"
+        android:textColor="#CAC4D0"
+        app:layout_constraintBottom_toBottomOf="@+id/watch_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toEndOf="@+id/watch_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.60"
+        tools:text="Price" />
+
+    <CheckBox
+        android:id="@+id/quick_favorite_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/favorite_checkbox"
+        app:buttonTint="@color/orange_accent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toEndOf="@+id/watch_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
